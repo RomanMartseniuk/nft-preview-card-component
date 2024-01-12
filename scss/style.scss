@@ -1,0 +1,185 @@
+body {
+  height: 100vh;
+  background-color: hsl(217, 54%, 11%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: Outfit;
+  font-weight: 300;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(216, 50%, 16%);
+  max-width: 350px;
+  height: 596px;
+  border-radius: 14px;
+}
+.card__body {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 302px;
+  margin: 20px 20px;
+}
+.card__image {
+  position: relative;
+  width: 302px;
+  height: 302px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+  }
+  &::before {
+   
+    border-radius: 7px;
+   z-index: 3;
+   position: absolute;
+   top: 0;
+   left: 0;
+   content: '';
+   display: block;
+   width: 100%;
+   height: 100%;
+   background-color: hsl(178, 100%, 50%);
+   opacity: 0;
+   transition: all 0.3s ease 0s;
+  }
+  &::after {
+   position: relative;
+   display: block;
+   content: url("../images/icon-view.svg");
+   z-index: 4;
+   transition: all 0.3s ease 0s;
+   opacity: 0;
+  }
+  &:hover {
+   &::before {
+      opacity: 0.6;
+   }
+   &::after {
+      opacity: 1;
+   }
+  }
+}
+.card__title {
+  font-weight: 600;
+  display: flex;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+  transition: all 0.3s ease 0s;
+  &:hover {
+    color: hsl(178, 100%, 50%);
+  }
+}
+.card__name {
+}
+.card__code {
+}
+.card__descr {
+  margin-top: 15px;
+  font-size: 18px;
+  color: hsl(215, 51%, 70%);
+}
+.card__info {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card__price {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  color: hsl(178, 100%, 50%);
+  gap: 6px;
+  &::before {
+    display: block;
+    content: url("../images/icon-ethereum.svg");
+  }
+}
+.card__date {
+  display: flex;
+  align-items: center;
+  color: hsl(215, 51%, 70%);
+  gap: 6px;
+  &::before {
+    display: block;
+    content: url("../images/icon-clock.svg");
+  }
+}
+.card__creator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 22px;
+  position: relative;
+  &::before {
+    position: absolute;
+    top: 0;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: hsl(215, 32%, 27%);
+  }
+}
+.card__avatar {
+  position: relative;
+  width: 33px;
+  height: 33px;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    border: 1px solid #fff;
+  }
+}
+.card__creator-about {
+  color: hsl(215, 51%, 70%);
+  font-weight: 300;
+  font-size: 16px;
+  a {
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      color: hsl(178, 100%, 50%);
+    }
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(215, 51%, 70%);
+}
